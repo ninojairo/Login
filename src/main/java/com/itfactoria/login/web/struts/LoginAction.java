@@ -14,9 +14,21 @@ public class LoginAction extends ActionSupport{
     private String usuario;
     private String password;
     
+    
+    
     @Override
     public String execute(){
-        return "SUCCESS";
+        System.out.println("usuario" +this.usuario);
+        System.out.println("password" +this.password);
+        
+        //return "SUCCESS";
+        if (this.usuario.equals(this.password)){
+            return "SUCCESS";
+        }
+        else{
+            return "FAILED";
+        }
+        
     }
 
     public String getUsuario() {
