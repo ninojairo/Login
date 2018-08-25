@@ -17,6 +17,9 @@
         <s:form action="ValidarUsuario">
             <s:textfield name="usuario" label="Su usuario"></s:textfield>
             <s:textfield name="password" label="Su password"></s:textfield>
+            <s:textfield name="nombre" label="Su nombre"></s:textfield>
+            <s:textfield name="email" label="Su email"></s:textfield>
+            
             <s:submit value="Submit"></s:submit>
             
         </s:form>
