@@ -21,7 +21,7 @@ public class ConfigAppStartupListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         System.out.println("contextInitialized");
-        new SimpleDataSource();
+        //new SimpleDataSource();
     }
 
     @Override

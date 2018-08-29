@@ -92,6 +92,25 @@ public class SimpleDataSource {
         BasicDataSource bds = (BasicDataSource) ds;
         bds.close();
     }
+    
+    public static Connection getConnection(){
+        System.out.println("getConnection");
+        Connection connection = null;
+        System.out.println("Setting up data source.");
+        DataSource dataSource = setupDataSource("jdbc:mysql://localhost:3306/sample?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "admin");
+        System.out.println("Done.");
+        
+        try {
+             System.out.println("Creating connection.");
+            connection = dataSource.getConnection();
+            
+        } catch (Exception sqle) {
+            sqle.printStackTrace();
+        }
+        
+        return connection;
+    
+    }
 
 }
 

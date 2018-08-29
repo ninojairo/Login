@@ -14,15 +14,19 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class LoginAction extends ActionSupport{
     private UsuarioDTO usuarioDTO;
-    
+    private String usuario;
     
     
     @Override
     public String execute(){
         
+        System.out.println("*******************************usuario:" +this.usuario );
+        
+        
         usuarioDTO = new UsuarioDTO();
         System.out.println("Usuario DTO creado");
         LoginDAO loginDAO = new LoginDAO();
+        loginDAO.Select();
         
         
         return "SUCCESS";
