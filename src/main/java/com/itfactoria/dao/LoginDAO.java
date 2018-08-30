@@ -18,33 +18,45 @@ import java.sql.SQLException;
  */
 public class LoginDAO {
         
-        private static final String SELECT = "select name, login, password, email from users";
-
-    public static void Select() {
+        
+    public static boolean select(UsuarioDTO usuarioDTO) {
         
         Connection connection = null;
         PreparedStatement stmt = null;
-        UsuarioDTO usuarioDTO = null;
+        boolean loginExitoso = false;
+        
+        
         ResultSet rs = null;
         
         try {
-            
+            System.out.println("**********DAOusuario:" + usuarioDTO.getUsuario());
+            System.out.println("**********DAOpassword:" + usuarioDTO.getPassword());
+            String query = "SELECT name, login, password, email FROM users WHERE login = '" + usuarioDTO.getUsuario()+ "' and password ='"+ usuarioDTO.getPassword()+ "'";
+                 
             connection = SimpleDataSource.getConnection();
-            stmt = connection.prepareStatement(SELECT);
+            stmt = connection.prepareStatement(query);
+            System.out.println("Query a ejecutar: "+query);
             rs= stmt.executeQuery();
-            System.out.println("Query a ejecutar: "+SELECT);
+            
             while(rs.next()){
                 System.out.println("Nombre"+ rs.getString(1));
                 System.out.println("Apellido"+ rs.getString(2));
-                
+                loginExitoso = true;
             }
             
             
         } catch (SQLException sqle) {
             sqle.printStackTrace();
         } finally{
-        
-        }
+            try {
+                rs.close();
+                stmt.close();
+                connection.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+         }
+        return loginExitoso;
             
     }
     
