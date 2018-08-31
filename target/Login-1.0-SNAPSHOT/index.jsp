@@ -15,10 +15,10 @@
     <body>
         <h1>Login Usuario JSP</h1>
         <s:form action="ValidarUsuario">
-            <s:textfield name="usuario" label="Su usuario"></s:textfield>
-            <s:textfield name="password" label="Su password"></s:textfield>
-            <s:textfield name="nombre" label="Su nombre"></s:textfield>
-            <s:textfield name="email" label="Su email"></s:textfield>
+            <s:textfield name="usuarioDTO.usuario" label="Su usuario"></s:textfield>
+            <s:textfield name="usuarioDTO.password" label="Su password"></s:textfield>
+            <s:textfield name="usuarioDTO.nombre" label="Su nombre"></s:textfield>
+            <s:textfield name="usuarioDTO.email" label="Su email"></s:textfield>
             
             <s:submit value="Submit"></s:submit>
             

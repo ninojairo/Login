@@ -14,6 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <struts2.version>2.5.14.1</struts2.version>
         <log4j2.version>2.10.0</log4j2.version>
+        <tiles.version>2.5.17</tiles.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -71,6 +72,11 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-tiles-plugin</artifactId>
+            <version>${tiles.version}</version>
         </dependency>
         
         

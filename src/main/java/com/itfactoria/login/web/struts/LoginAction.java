@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.itfactoria.login.web.struts;
+
 import com.itfactoria.dao.LoginDAO;
 import com.itfactoria.dto.UsuarioDTO;
 import com.opensymphony.xwork2.ActionSupport;
@@ -12,75 +13,49 @@ import com.opensymphony.xwork2.ActionSupport;
  *
  * @author jaironino
  */
-public class LoginAction extends ActionSupport{
+public class LoginAction extends ActionSupport {
+
     private UsuarioDTO usuarioDTO;
-    private String usuario;
-    private String password;
-    private String nombre;
-    private String email;
-    
-    
-    
+
+    public UsuarioDTO getUsuarioDTO() {
+        return usuarioDTO;
+    }
+
+    public void setUsuarioDTO(UsuarioDTO usuarioDTO) {
+        this.usuarioDTO = usuarioDTO;
+    }
     
     @Override
-    public String execute(){
-        
-        System.out.println("*******************************usuario:" +this.usuario);
-        System.out.println("*******************************password:" +this.password);
-        
-        
-        usuarioDTO = new UsuarioDTO();
-        System.out.println("Usuario DTO creado");
-        
-        usuarioDTO.setUsuario(this.usuario);
-        usuarioDTO.setPassword(this.password);
-        usuarioDTO.setName(this.nombre);
-        usuarioDTO.setEmail(this.email);
-        
-        System.out.println("Usuario DTO lleno");
-        
+    public String execute() {
+
+        System.out.println("************************************Exceute");
         
         LoginDAO loginDAO = new LoginDAO();
-        
-        if (loginDAO.select(usuarioDTO)){
-            return "SUCCESS";
+
+        if (loginDAO.select(usuarioDTO)) {
+            return SUCCESS+"Tiles";
+        } else {
+            return ERROR;
         }
-        else{
-            return "FAILED";
+
+    }
+
+    
+    @Override
+    public void validate() {
+        
+        
+        if(usuarioDTO.getUsuario().length()==0){
+            addFieldError("usuarioDTO.usuario", "El usuario  es requerido");
         }
         
-        
-        
-        
-        
-        /*if (this.usuario.equals(this.password)){
-            return "SUCCESS";
+        if(usuarioDTO.getPassword().length()==0){
+            addFieldError("usuarioDTO.password", "El password es requerido");
         }
-        else{
-            return "FAILED";
-        }*/
         
-        
+        System.out.println("Continua el flujo");
     }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     
     
-    
-    
+
 }
