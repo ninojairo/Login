@@ -1,5 +1,9 @@
 com\itfactoria\config\SimpleDataSource.class
-com\itfactoria\dao\LoginDAO.class
 com\itfactoria\login\web\struts\LoginAction.class
+com\itfactoria\dao\LoginDAOJpaImpl.class
+com\itfactoria\dao\LoginDAOInterface.class
+com\itfactoria\listener\HibernateServletContextListener.class
+com\itfactoria\dao\LoginDAO.class
 com\itfactoria\listener\ConfigAppStartupListener.class
+com\itfactoria\dao\LoginDAOImpl.class
 com\itfactoria\dto\UsuarioDTO.class

@@ -1,5 +1,9 @@
 C:\SW_development\Java\Login\src\main\java\com\itfactoria\login\web\struts\LoginAction.java
 C:\SW_development\Java\Login\src\main\java\com\itfactoria\dao\LoginDAO.java
 C:\SW_development\Java\Login\src\main\java\com\itfactoria\dto\UsuarioDTO.java
+C:\SW_development\Java\Login\src\main\java\com\itfactoria\dao\LoginDAOImpl.java
 C:\SW_development\Java\Login\src\main\java\com\itfactoria\listener\ConfigAppStartupListener.java
+C:\SW_development\Java\Login\src\main\java\com\itfactoria\dao\LoginDAOJpaImpl.java
+C:\SW_development\Java\Login\src\main\java\com\itfactoria\listener\HibernateServletContextListener.java
 C:\SW_development\Java\Login\src\main\java\com\itfactoria\config\SimpleDataSource.java
+C:\SW_development\Java\Login\src\main\java\com\itfactoria\dao\LoginDAOInterface.java
